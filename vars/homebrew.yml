@@ -1,10 +1,10 @@
 ---
 homebrew_installed_packages:
   - ansible-lint
+  - awscli
   - bash-completion
   - dockutil
   - docker-compose
-  - exa
   - gettext
   - git
   - github
@@ -12,7 +12,6 @@ homebrew_installed_packages:
   - gpg
   - jq
   - make
-  - nvm
   - openjdk
   - openssl@3
   - readline

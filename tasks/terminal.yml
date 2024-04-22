@@ -7,7 +7,7 @@
   get_url:
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     dest: "{{ setup_dir }}/install-oh-my-zsh.sh"
-    mode: 0744
+    mode: "0744"
   when: not ohmyzsh_present.stat.exists
 - name: Run Oh My Zsh script in unattended mode.
   command: 'sh {{ setup_dir }}/install-oh-my-zsh.sh "" --unattended'
@@ -31,14 +31,14 @@
   get_url:
     url: https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh
     dest: ~/.iterm2_shell_integration.sh
-    mode: 0755
+    mode: "0755"
 
 - name: Install iTerm2 shell integration
   command: ~/.iterm2_shell_integration.sh
 
 - name: Install nvm
   ansible.builtin.shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+    set -o pipefail && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
 
@@ -51,12 +51,12 @@
     # Clone my fork of the linked Python script
     url: https://gist.githubusercontent.com/Rooster212/e11f2c9f28ff44d4def8a9cdc5af2a58/raw/417281160442fc4ebad2dc64cffcd6c5892d26e3/aws_sso.py
     dest: "~/.aws_sso.py"
-    mode: 0744
+    mode: "0744"
 # https://labbots.com/enabling-touch-id-for-access-on-terminal/
-# - name: Enable TouchID support for sudo
-#   lineinfile:
-#     path: /etc/pam.d/sudo
-#     line: auth sufficient pam_tid.so
-#     state: present
-#   tags:
-#    - terminal
+- name: Enable TouchID support for sudo
+  lineinfile:
+    path: /etc/pam.d/sudo
+    line: auth sufficient pam_tid.so
+    state: present
+  tags:
+    - terminal

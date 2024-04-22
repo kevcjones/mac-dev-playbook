@@ -1,5 +1,6 @@
 ---
-- hosts: localhost
+- name: Setup mac
+  hosts: localhost
   connection: local
 
   vars:
@@ -24,7 +25,7 @@
       file:
         path: "{{ setup_dir }}/"
         state: directory
-        mode: 0744
+        mode: "0744"
     - name: Ensure Rosetta is enabled. # We do this near the start as some Homebrew packages require Rosetta
       include_tasks: tasks/rosetta.yml
       tags:
