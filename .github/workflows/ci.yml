@@ -1,10 +1,11 @@
 ---
 name: CI
 "on":
+  workflow_dispatch:
   pull_request:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: "0 5 * * 1" # At 5am every Monday
 
