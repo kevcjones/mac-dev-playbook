@@ -1,12 +1,12 @@
 ---
 name: CI
-'on':
+"on":
   pull_request:
   push:
     branches:
       - master
   schedule:
-    - cron: "0 5 * * 1"  # At 5am every Monday
+    - cron: "0 5 * * 1" # At 5am every Monday
 
 defaults:
   run:
@@ -25,7 +25,7 @@ jobs:
       - name: Set up Python 3.
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Install test dependencies.
         run: pip3 install yamllint ansible-core ansible-lint
@@ -67,4 +67,4 @@ jobs:
       - name: Test the playbook.
         run: ansible-playbook main.yml
         env:
-          ANSIBLE_FORCE_COLOR: '1'
+          ANSIBLE_FORCE_COLOR: "1"

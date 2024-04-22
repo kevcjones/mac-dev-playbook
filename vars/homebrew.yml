@@ -1,33 +1,23 @@
 ---
 homebrew_installed_packages:
-  - autoconf
-  - openjdk
   - ansible-lint
-  - awscli
   - bash-completion
   - dockutil
+  - docker-compose
   - exa
   - gettext
   - git
-  - github/gh/gh
-  - go
-  - golangci-lint
+  - github
+  - gh
   - gpg
-  - iperf
-  - libevent
-  - mcrypt
-  - nano
-  - nmap
-  - node
-  - ssh-copy-id
+  - jq
+  - make
+  - nvm
+  - openjdk
+  - openssl@3
   - readline
-  - openssl
-  - podman
-  - pv
-  - pyenv
-  - watch
+  - ssh-copy-id
   - wget
-  - wrk
   - yt-dlp
   - zsh-history-substring-search
   - zsh-syntax-highlighting
@@ -38,25 +28,10 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - 1password
-  - 1password-cli
   - authy
-  - android-studio
-  - caffeine
-  - dynamodb-local
   - docker
   - firefox
   - google-chrome
-  # - insomnia
+  - httpie
   - iterm2
-  - menumeters
-  - microsoft-edge
-  - microsoft-teams
-  - microsoft-excel
-  - microsoft-word
-  - microsoft-outlook
-  - microsoft-powerpoint
-  - vlc
   - visual-studio-code
-  - plexamp
-  - openvpn-connect

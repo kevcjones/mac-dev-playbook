@@ -1,11 +1,7 @@
 ---
 mas_installed_apps:
-  - name: Xcode
-    id: 497799835
-  - name: Magnet
-    id: 441258766
-  - name: Telegram
-    id: 747648890
+  - name: Divvy
+    id: 413857545
 
 mas_uninstalled_apps:
   - name: "iMovie"

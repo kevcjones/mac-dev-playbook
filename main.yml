@@ -6,8 +6,8 @@
     osx_script: "~/.osx"
     setup_dir: "~/setup"
 
-    # Ensure Ansible is installed via pip
-    ansible_install_method: pip
+    # Ensure Ansible is installed via brew
+    ansible_install_method: brew
 
     omz_git_repository: "https://github.com/ohmyzsh/ohmyzsh.git"
     omz_install_path: ~/.oh-my-zsh
@@ -43,6 +43,7 @@
       # https://docs.brew.sh/FAQ#my-mac-apps-dont-find-homebrew-utilities
     - name: Ensure Mac apps can access Homebrew apps (fix for Android Studio)
       command: sudo launchctl config user path "$(brew --prefix)/bin:${PATH}"
+
     - name: Setup Terminal
       include_tasks:
         file: tasks/terminal.yml
@@ -50,6 +51,7 @@
           tags: terminal
       tags:
         - terminal
+
     - name: Setup VS Code
       include_tasks:
         file: tasks/vscode.yml
@@ -61,9 +63,11 @@
     - name: Run Dotfile role.
       include_role:
         name: geerlingguy.dotfiles
+
     - name: Run .osx script
       command: "sudo sh {{ osx_script }}  --no-restart"
       changed_when: false
+
     - name: Run Mac Dock role.
       include_role:
         name: geerlingguy.mac.dock
