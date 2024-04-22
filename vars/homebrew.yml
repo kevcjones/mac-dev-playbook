@@ -5,7 +5,7 @@ homebrew_installed_packages:
   - bash-completion
   - dockutil
   - docker-compose
-  - eza #replaces deprecated exa and symlinks it
+  - eza # replaces deprecated exa and symlinks it
   - gettext
   - git
   - github
