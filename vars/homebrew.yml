@@ -23,7 +23,6 @@ homebrew_installed_packages:
   - zsh-syntax-highlighting
 
 homebrew_taps:
-  - homebrew/core
   - homebrew/cask
 
 homebrew_cask_appdir: /Applications
