@@ -2,7 +2,7 @@
 
 # Mac Dev Playbook
 
-Forked from [Jamies setup](Rooster212/mac-dev-ansible-setup) inspired by [His Mac Dev Playbook repo](https://github.com/geerlingguy/mac-dev-playbook) i decided to get this done finally with a new Mac incoming.
+Forked from [Jamies setup](Rooster212/mac-dev-ansible-setup) inspired by originally by [this Mac Dev Playbook repo](https://github.com/geerlingguy/mac-dev-playbook) i decided to follow suit get this done finally with a new Mac incoming.
 
 ## Quick install
 
