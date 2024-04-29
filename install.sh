@@ -31,6 +31,7 @@ set -e
 
 # Here we go.. ask for the administrator password upfront and run a
 # keep-alive to update existing `sudo` time stamp until script has finished
+sudo -k
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
@@ -46,6 +47,8 @@ fi
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
+  echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> $HOME/.zprofile
+  eval $(/opt/homebrew/bin/brew shellenv)
 else
   fancy_echo "Homebrew already installed. Skipping."
 fi
