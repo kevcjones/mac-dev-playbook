@@ -35,16 +35,17 @@ set -e
 # while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Ensure Apple's command line tools are installed
-if ! command -v cc >/dev/null; then
+if xcode-select -p &>/dev/null; then
+  fancy_echo "Xcode already installed. Skipping."
+else
   fancy_echo "Installing xcode ..."
   xcode-select --install 
-else
-  fancy_echo "Xcode already installed. Skipping."
 fi
+
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 else
   fancy_echo "Homebrew already installed. Skipping."
 fi
