@@ -3,6 +3,7 @@ homebrew_installed_packages:
   - ansible-lint
   - awscli
   - bash-completion
+  - discord
   - dockutil
   - docker-compose
   - eza # replaces deprecated exa and symlinks it
@@ -22,7 +23,8 @@ homebrew_installed_packages:
   - zsh-history-substring-search
   - zsh-syntax-highlighting
 
-homebrew_taps: []
+homebrew_taps:
+  - discord
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
