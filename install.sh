@@ -76,6 +76,7 @@ if [ -d "./mac-dev-playbook" ]; then
   fancy_echo "mac-dev-plybook repo dir exists. Removing ..."
   rm -rf ./mac-dev-playbook/
 fi
+
 fancy_echo "Cloning mac-dev-playbook repo ..."
 git clone https://github.com/kevcjones/mac-dev-playbook.git 
 
