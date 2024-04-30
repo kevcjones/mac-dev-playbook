@@ -43,6 +43,16 @@ else
   xcode-select --install 
 fi
 
+# Unfortunatly, and i loath this xocdebuild will not run without the full xcode installed
+# all SO posts to the contrary .. i couldn't make the select of the CL tools work
+if [ -d "/Applications/Xcode.app" ]; then
+    echo "Full Xcode is installed."
+    sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+else
+    echo "Full Xcode is not installed. Please install it if needed."
+    exit 1
+fi
+
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew..."
