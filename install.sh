@@ -48,6 +48,7 @@ fi
 if [ -d "/Applications/Xcode.app" ]; then
     echo "Full Xcode is installed."
     sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    sudo xcodebuild -license accept
 else
     echo "Full Xcode is not installed. Please install it if needed."
     exit 1
