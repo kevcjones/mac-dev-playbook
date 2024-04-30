@@ -91,4 +91,4 @@ ansible-galaxy install -r requirements.yml
 
 # Run this from the same directory as this README file. 
 fancy_echo "Running ansible playbook ..."
-ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv 
+ansible-playbook main.yml -K
