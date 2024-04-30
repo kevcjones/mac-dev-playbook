@@ -30,10 +30,6 @@
       include_tasks: tasks/rosetta.yml
       tags:
         - rosetta
-    - name: Ensure Homebrew permissions are correct
-      command: sudo chown -R $(whoami) /usr/local
-      tags:
-        - homebrew
 
   roles:
     - elliotweiser.osx-command-line-tools
